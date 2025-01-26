@@ -1,0 +1,20 @@
+name: ${rootProject.name}
+main: ${group}
+version: ${version}
+api-version: 1.20
+depend:
+  - FICore
+commands:
+  cobblemontrade:
+    description: fi
+permissions:
+  cobblemontrade.cmd.reload:
+    default: op
+  cobblemontrade.cmd.apply:
+    default: true
+  cobblemontrade.cmd.cancelapply:
+    default: true
+  cobblemontrade.cmd.refuse:
+    default: true
+  cobblemontrade.ability.shiftinteract:
+    default: true

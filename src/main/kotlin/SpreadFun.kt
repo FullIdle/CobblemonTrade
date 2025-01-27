@@ -200,7 +200,7 @@ fun Player.applyTrade(target: Player) {
     //申请
     applyCache[this] = target to Bukkit.getScheduler().runTaskLater(CobblemonTrade.INSTANCE, Runnable {
         target.refuseTrade(this)
-    }, 5 * 20L)
+    }, 15 * 20L)
     this.spigot().sendMessage(*APPLY_MSG(target))
     target.spigot().sendMessage(*RECEIVE_APPLY_MSG(this))
 }

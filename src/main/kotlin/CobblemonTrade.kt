@@ -10,6 +10,11 @@ class CobblemonTrade: JavaPlugin() {
     companion object {
         lateinit var INSTANCE: CobblemonTrade
         val applyCache = hashMapOf<Player, Pair<Player,BukkitTask>>()
+        val cobblemonVersion = run {
+            val field = Cobblemon::class.java.getDeclaredField("VERSION")
+            field.isAccessible = true
+            field.get(Cobblemon) as String
+        }
     }
 
     override fun onEnable() {
@@ -22,7 +27,7 @@ class CobblemonTrade: JavaPlugin() {
 
         this.logger.info("§3MC-Version:§a ${SomeMethod.getMinecraftVersion()}")
         this.logger.info("§3NMS-Version:§a ${SomeMethod.getNmsVersion()}")
-        this.logger.info("§3Cobblemon-Version:§a ${Cobblemon.VERSION}")
+        this.logger.info("§3Cobblemon-Version:§a $cobblemonVersion")
         this.logger.info("§3CobblemonTrade-Version:§a ${this.description.version}")
         this.logger.info("§aPlugin enabled!")
     }
